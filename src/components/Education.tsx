@@ -6,8 +6,7 @@ import {
   Calendar, 
   MapPin, 
   Award, 
-  BookOpen, 
-  CheckCircle2 
+  BookOpen 
 } from "lucide-react";
 import { EDUCATION } from "@/data/portfolioData";
 
@@ -106,15 +105,6 @@ export default function Education() {
                   </div>
                 )}
 
-              </div>
-
-              {/* Card Footer status */}
-              <div className="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>{edu.status}</span>
-                </span>
-                <span className="font-mono text-[11px] text-slate-400 dark:text-slate-500">{edu.location}</span>
               </div>
 
             </div>

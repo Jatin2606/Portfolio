@@ -127,11 +127,6 @@ export default function Skills() {
                   })}
                 </div>
               </div>
-
-              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
-                <span>{cat.skills.length} competencies</span>
-                <span className="font-mono text-slate-400 dark:text-slate-500">Core Stack</span>
-              </div>
             </div>
           ))}
         </div>
