@@ -42,13 +42,13 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Available for Full-Time SWE / Backend / AI Roles (May 2026 / Immediate)</span>
+              <span>Available for Full-Time Opportunities (Starting May 2026)</span>
             </div>
 
             {/* Main Name Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
               Hi, I&apos;m{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-teal-400 to-emerald-400">
+              <span className="text-sky-500 dark:text-sky-400 font-extrabold">
                 {PERSONAL_INFO.name}
               </span>
             </h1>
@@ -185,7 +185,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
-                  UF RAG / pgvector
+                  FeedFL
                 </button>
                 <button
                   onClick={() => setActiveTab("specs")}
@@ -240,7 +240,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 <div className="space-y-3 animate-in fade-in duration-200">
                   <div className="flex items-center justify-between text-slate-400">
                     <span>Engine: pgvector + Llama-3.1-8B</span>
-                    <span className="text-emerald-400">UF Production</span>
+                    <span className="text-emerald-400">FeedFL Production</span>
                   </div>
 
                   <div className="space-y-2 text-[11px]">

@@ -81,14 +81,6 @@ export default function About() {
               </ul>
             </div>
 
-            {/* Target roles callout */}
-            <div className="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-900/50 text-sm">
-              <span className="font-semibold text-sky-900 dark:text-sky-300">Target Roles:</span>{" "}
-              <span className="text-sky-800 dark:text-sky-200">
-                Entry-Level Software Engineer &middot; Backend Engineer &middot; Full-Stack Engineer &middot; AI Systems Engineer (United States)
-              </span>
-            </div>
-
           </div>
 
           {/* Right Column: Key Impact Highlight Cards */}

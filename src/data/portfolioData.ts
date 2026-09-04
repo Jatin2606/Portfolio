@@ -74,7 +74,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/Jatin2606",
   linkedin: "https://www.linkedin.com/in/jatin-shivaprakash-8a1667234/",
   resumePdfUrl: "/resume.pdf",
-  availability: "Open to Full-Time Entry-Level Roles (Starting May 2026 / Immediate)",
+  availability: "Open to Full-Time Opportunities (Starting May 2026 / Immediate)",
   bioShort: "Master's student in Computer Science at the University of Florida (3.9 GPA) specializing in high-concurrency backend services, distributed systems, RAG / semantic search architectures, and performant web applications.",
   bioFull: [
     "I am a backend-focused Software Engineer and Master's student in Computer Science at the University of Florida (GPA: 3.9 / 4.00). My core expertise lies in designing concurrency-safe backend architectures, low-latency RESTful APIs, distributed ledger systems, and production AI/RAG search pipelines.",
@@ -163,6 +163,41 @@ export const PROJECTS: ProjectDetail[] = [
     technologies: ["Go", "React", "NLP", "Google Maps API", "REST APIs", "JavaScript", "HTML/CSS"],
     githubUrl: "https://github.com/Jatin2606/UF-NestMate",
     featured: true
+  },
+  {
+    id: "feedfl",
+    title: "FeedFL",
+    subtitle: "Production RAG Chatbot & Food Provider Platform with pgvector Semantic Search",
+    period: "Jan. 2026 – Apr. 2026",
+    role: "Full-Stack & AI Software Engineer",
+    summary: "A production community assistance and food provider discovery platform featuring role-based Flutter mobile dashboards, a RAG chatbot powered by pgvector semantic vector search, and a FastAPI + PostGIS geospatial backend.",
+    problem: "Over 120 food providers and hundreds of residents in Palm Beach County required a fast, intuitive way to locate food assistance, check eligibility, and query hours without long phone queues or navigating outdated directories.",
+    solution: "Engineered an end-to-end platform with role-based Flutter mobile apps and an intelligent RAG chatbot. Indexed provider metadata with pgvector for semantic search, configured Llama-3.1-8B with Mistral-Small-3.1 fallback, and utilized PostGIS for real-time proximity filtering.",
+    architecture: {
+      overview: "Multi-tier AI architecture with Flutter mobile apps connected to a FastAPI backend, pgvector semantic search engine, and PostGIS geospatial database hosted on Supabase.",
+      components: [
+        "Flutter Mobile Client: Role-based iOS and Android dashboards onboarding 200+ users and 120 food providers",
+        "FastAPI Service: High-performance asynchronous REST endpoints for authentication and query dispatch",
+        "RAG Semantic Pipeline: pgvector cosine similarity search with Llama-3.1-8B and Mistral-Small-3.1 fallback",
+        "PostGIS Geospatial Engine: Spatial distance indexing cutting query latency up to 30%",
+        "Supabase Infrastructure: Managed PostgreSQL, Edge Functions, and built-in auth cutting setup time by 40%"
+      ],
+      dataFlow: "User asks conversational food query on Flutter app → FastAPI embeds text and queries pgvector for semantic similarity → PostGIS filters nearest providers → Llama-3.1 / Mistral generates grounded answer → Returned in sub-second latency."
+    },
+    technicalHighlights: [
+      "Built a production Flutter iOS/Android app with role-based dashboards, onboarding 200+ users and 120 food providers in Palm Beach County.",
+      "Designed a RAG chatbot with pgvector semantic search and Llama-3.1-8B / Mistral-Small-3.1 fallback for grounded provider recommendations.",
+      "Architected a FastAPI + PostgreSQL backend with normalized schema and PostGIS proximity search, cutting query latency up to 30%.",
+      "Migrated backend from AWS (EC2, RDS) to Supabase, using managed PostgreSQL, Edge Functions, and built-in auth to cut setup time 40%."
+    ],
+    benchmarks: [
+      { metric: "Query Latency", value: "-30%", details: "Reduced via PostGIS geospatial proximity indexing" },
+      { metric: "Setup Time", value: "-40%", details: "Reduced through Supabase & Edge Functions migration" },
+      { metric: "Active Scale", value: "200+ Users", details: "Over 120 food providers onboarded in Palm Beach County" }
+    ],
+    technologies: ["FastAPI", "PostgreSQL", "pgvector", "PostGIS", "Supabase", "Flutter", "Llama-3.1-8B", "Mistral-Small-3.1", "AWS (EC2, RDS)", "Edge Functions", "Python"],
+    githubUrl: "https://github.com/Jatin2606",
+    featured: true
   }
 ];
 
@@ -191,6 +226,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "uf-food-rag",
     role: "Software Engineer",
     organization: "University of Florida",
+    department: "FeedFL Platform",
     location: "Gainesville, FL",
     period: "Jan. 2026 – Apr. 2026",
     current: false,

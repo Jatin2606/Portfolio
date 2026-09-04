@@ -69,7 +69,7 @@ export default function Contact() {
             Let&apos;s Build Something Great.
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-            I am actively seeking full-time Software Engineer, Backend Engineer, and AI Systems roles. Let&apos;s discuss how I can contribute to your engineering team.
+            I am actively seeking full-time software engineering opportunities. Let&apos;s discuss how I can contribute to your team.
           </p>
         </div>
 

@@ -13,23 +13,22 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem("portfolio_theme") as Theme | null;
-    if (savedTheme) {
-      setThemeState(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    } else {
-      // Default to dark for engineering aesthetic
+    if (savedTheme === "dark") {
       setThemeState("dark");
       document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      setThemeState("light");
+      document.documentElement.classList.remove("dark");
+    } else {
+      // Default to Day Mode on fresh visits
+      setThemeState("light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 

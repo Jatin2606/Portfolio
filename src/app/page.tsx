@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import RecruiterSnapshot from "@/components/RecruiterSnapshot";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
@@ -23,9 +22,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero onOpenResumeModal={() => setIsResumeModalOpen(true)} />
-
-      {/* 30-Second Recruiter Cheat Sheet */}
-      <RecruiterSnapshot />
 
       {/* About Section */}
       <About />

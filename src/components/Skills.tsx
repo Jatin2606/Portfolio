@@ -21,7 +21,8 @@ export default function Skills() {
     ledgerflow: "LedgerFlow (FastAPI & PostgreSQL double-entry ledger)",
     "uf-nestmate": "UF-NestMate (Go & React housing platform)",
     "uf-wildlife": "UF Wildlife Ecology (SnapperGPS Node.js backend)",
-    "uf-food-rag": "UF Food App (pgvector RAG chatbot & FastAPI)",
+    feedfl: "FeedFL (pgvector RAG chatbot & FastAPI)",
+    "uf-food-rag": "FeedFL (pgvector RAG chatbot & FastAPI)",
     axisxi: "Axisxi (High-traffic Django/Spring Boot APIs & Redis)",
   };
 
