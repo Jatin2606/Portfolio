@@ -56,7 +56,7 @@ export default function Skills() {
             Skills &amp; Technologies
           </h2>
           <p className="mt-2 text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Directly verified against production systems, research projects, and open-source repositories. Click or hover any skill to inspect where it was applied.
+            Languages, frameworks, databases, and developer tools used across production backends, academic research, and engineering projects.
           </p>
         </div>
 
@@ -129,8 +129,8 @@ export default function Skills() {
               </div>
 
               <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
-                <span>{cat.skills.length} skills listed</span>
-                <span className="font-mono text-sky-500 dark:text-sky-400">verified</span>
+                <span>{cat.skills.length} competencies</span>
+                <span className="font-mono text-slate-400 dark:text-slate-500">Core Stack</span>
               </div>
             </div>
           ))}

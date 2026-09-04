@@ -43,7 +43,7 @@ export default function About() {
             <p>
               My engineering focus centers on <span className="text-sky-600 dark:text-sky-400 font-semibold">backend architecture</span>,{" "}
               <span className="text-emerald-600 dark:text-emerald-400 font-semibold">concurrency control</span>, and{" "}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold">grounded AI systems</span>. 
+              <span className="text-purple-600 dark:text-purple-400 font-semibold">applied AI systems</span>. 
               Whether it&apos;s architecting double-entry ledgers that benchmark at 340 req/s with PostgreSQL row-level locks, 
               building RAG retrieval pipelines powered by <code className="font-mono text-sm bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">pgvector</code> and Llama-3.1-8B, 
               or optimizing IoT firmware scheduling to extend device battery life by 50%, I care deeply about correctness, latency, and predictable system behavior.

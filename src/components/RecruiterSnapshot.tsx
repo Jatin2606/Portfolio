@@ -71,7 +71,7 @@ export default function RecruiterSnapshot() {
           <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 mb-2">
               <Zap className="w-4 h-4" />
-              <span className="text-xs font-bold uppercase tracking-wider">Verified Scale</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Production Scale</span>
             </div>
             <div className="text-sm font-semibold text-slate-900 dark:text-white">
               340 req/s &middot; 56ms p99 Latency

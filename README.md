@@ -2,7 +2,7 @@
 
 A modern, minimal, and high-performance developer portfolio website designed for **Software Engineer / Full-Stack Engineer / AI Engineer / Backend Engineer** roles.
 
-Built with **Next.js 14+ (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, strictly grounded in the author's verified academic and professional track record at the **University of Florida** and **SRM Institute of Science and Technology**.
+Built with **Next.js 14+ (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, highlighting academic achievements and engineering projects at the **University of Florida** and **SRM Institute of Science and Technology**.
 
 ---
 

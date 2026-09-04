@@ -114,7 +114,7 @@ export default function Education() {
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>{edu.status}</span>
                 </span>
-                <span className="font-mono text-[11px]">Source: Resume Verified</span>
+                <span className="font-mono text-[11px] text-slate-400 dark:text-slate-500">{edu.location}</span>
               </div>
 
             </div>

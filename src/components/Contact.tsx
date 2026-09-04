@@ -156,7 +156,7 @@ export default function Contact() {
                   Curriculum Vitae / Resume
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Verified PDF &middot; Updated September 2026
+                  PDF Document &middot; Updated September 2026
                 </div>
               </div>
               <a
