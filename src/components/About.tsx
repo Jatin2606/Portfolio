@@ -55,6 +55,12 @@ export default function About() {
               I am comfortable jumping between the application layer, database internals, and deployment infrastructure.
             </p>
 
+            <p>
+              Beyond production backends, my background spans machine learning, distributed systems, and data engineering, 
+              with <strong className="text-slate-900 dark:text-white font-semibold">research published at IEEE</strong> on deep learning for precision agriculture 
+              (<em className="text-sky-600 dark:text-sky-400">&ldquo;Disease Detection in Arecanut using Convolutional Neural Network&rdquo;</em>, IEEE ACCAI 2024).
+            </p>
+
             {/* What I enjoy solving */}
             <div className="pt-2">
               <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3 flex items-center gap-2">
@@ -102,7 +108,23 @@ export default function About() {
               </p>
             </div>
 
-            {/* Stat Card 2 */}
+            {/* Stat Card 2: IEEE Publication */}
+            <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-amber-500/40 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase text-slate-400">IEEE Research Publication</span>
+                <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-500">
+                  <Layers className="w-4 h-4" />
+                </span>
+              </div>
+              <div className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 mt-2">
+                Deep Learning <span className="text-sm font-normal text-slate-400">(CNN)</span>
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                IEEE ACCAI 2024 &middot; Disease Detection in Precision Agriculture
+              </p>
+            </div>
+
+            {/* Stat Card 3 */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500/40 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono uppercase text-slate-400">Ledger Concurrency</span>
@@ -118,7 +140,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Stat Card 3 */}
+            {/* Stat Card 4 */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-purple-500/40 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono uppercase text-slate-400">Production Scale</span>
@@ -131,22 +153,6 @@ export default function About() {
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 Axisxi production APIs with Redis caching &amp; 30% query response time cut
-              </p>
-            </div>
-
-            {/* Stat Card 4 */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500/40 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">IoT Device Optimization</span>
-                <span className="p-1.5 rounded-lg bg-sky-500/10 text-sky-500">
-                  <Cpu className="w-4 h-4" />
-                </span>
-              </div>
-              <div className="text-3xl font-extrabold text-sky-600 dark:text-sky-400 mt-2">
-                ~50% <span className="text-sm font-normal text-slate-400">Gain</span>
-              </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                Battery longevity &amp; storage utilization improved on SnapperGPS devices at UF
               </p>
             </div>
 

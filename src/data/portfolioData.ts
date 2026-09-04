@@ -54,6 +54,15 @@ export interface EducationItem {
   coursework?: string[];
 }
 
+export interface PublicationItem {
+  title: string;
+  conference: string;
+  year: string;
+  publisher: string;
+  description: string;
+  topics: string[];
+}
+
 export interface SkillCategory {
   category: string;
   description: string;
@@ -67,7 +76,7 @@ export interface SkillCategory {
 export const PERSONAL_INFO = {
   name: "Jatin Shivaprakash",
   role: "Software Engineer",
-  subRole: "Backend, Full-Stack & AI Systems",
+  subRole: "Backend · Data Analytics · AI/ML",
   location: "Gainesville, Florida",
   email: "jatin.shivaprk@gmail.com",
   phone: "+1 (352) 709-2606",
@@ -75,19 +84,30 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/jatin-shivaprakash-8a1667234/",
   resumePdfUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/resume.pdf`,
   availability: "Open to Full-Time Opportunities (Starting May 2026 / Immediate)",
-  bioShort: "Master's student in Computer Science at the University of Florida (3.9 GPA) specializing in high-concurrency backend services, distributed systems, RAG / semantic search architectures, and performant web applications.",
+  bioShort: "Master's student in Computer Science at the University of Florida (3.9 GPA) specializing in backend development, data analytics, and machine learning systems.",
   bioFull: [
-    "I am a backend-focused Software Engineer and Master's student in Computer Science at the University of Florida (GPA: 3.9 / 4.00). My core expertise lies in designing concurrency-safe backend architectures, low-latency RESTful APIs, distributed ledger systems, and production AI/RAG search pipelines.",
-    "At the University of Florida, I have engineered IoT backend services optimizing GPS sensor battery life by ~50% for wildlife research, as well as production full-stack mobile systems integrating pgvector semantic search and open-weight LLMs (Llama 3.1 & Mistral). Previously at Axisxi, I architected high-throughput REST APIs and Redis caching layers supporting 40,000+ requests/day.",
-    "I am passionate about solving tough engineering challenges: eliminating race conditions in transactional ledgers, designing idempotent APIs, tuning database query execution plans, and bridging cutting-edge language models with grounded enterprise knowledge."
+    "I am a software engineer and Computer Science graduate student at the University of Florida (GPA: 3.9), graduating in May 2026. I specialize in backend development, data analytics, and AI/ML systems, with hands-on experience building scalable systems using Go, Python, React.js, and REST APIs.",
+    "Currently, I am working on the backend for FeedFL, alongside past projects like UF NestMate — a full-stack housing platform for international students. My background spans machine learning, distributed systems, and data engineering, with research published at IEEE on deep learning for precision agriculture.",
+    "I'm passionate about building products that solve real problems, bringing a mix of strong CS fundamentals, practical engineering experience, and a research mindset to everything I work on."
   ],
   stats: [
     { label: "UF M.S. GPA", value: "3.9 / 4.00", highlight: "Top Academic Standing" },
+    { label: "IEEE Published", value: "Deep Learning", highlight: "Precision Agriculture (ACCAI)" },
     { label: "Ledger Benchmark", value: "340 req/s", highlight: "56ms p99 Latency (0.00% errors)" },
-    { label: "Daily Production Scale", value: "40k+ req/day", highlight: "Redis Caching & DRF APIs" },
-    { label: "Device Optimization", value: "~50%", highlight: "Battery & Storage Extended" }
+    { label: "Daily Production Scale", value: "40k+ req/day", highlight: "Redis Caching & DRF APIs" }
   ]
 };
+
+export const PUBLICATIONS: PublicationItem[] = [
+  {
+    title: "Disease Detection in Arecanut using Convolutional Neural Network",
+    conference: "2024 International Conference on Advances in Computing, Communication and Applied Informatics (ACCAI)",
+    year: "2024",
+    publisher: "IEEE",
+    description: "Developed and trained deep learning Convolutional Neural Network (CNN) models to classify stem infections (healthy trunk, stem bleeding, and stem cracking) with high accuracy for precision agriculture applications.",
+    topics: ["Deep Learning", "CNNs", "Computer Vision", "Precision Agriculture", "IEEE ACCAI 2024"]
+  }
+];
 
 export const PROJECTS: ProjectDetail[] = [
   {
@@ -362,6 +382,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "PostGIS", usedIn: ["uf-food-rag"] },
       { name: "Redis", usedIn: ["axisxi"] },
       { name: "MySQL", usedIn: ["axisxi"] },
+      { name: "Snowflake", usedIn: [] },
       { name: "MongoDB", usedIn: [] }
     ]
   },
@@ -373,6 +394,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "Semantic Search", usedIn: ["uf-food-rag"] },
       { name: "Llama-3.1-8B", usedIn: ["uf-food-rag"] },
       { name: "Mistral-Small-3.1", usedIn: ["uf-food-rag"] },
+      { name: "TensorFlow", usedIn: [] },
       { name: "LangChain", usedIn: [] },
       { name: "NLP", usedIn: ["uf-nestmate"] },
       { name: "scikit-learn", usedIn: [] },
@@ -399,11 +421,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "Concurrency Control", usedIn: ["ledgerflow"] },
       { name: "Row-Level Locking", usedIn: ["ledgerflow"] },
       { name: "Distributed Systems", usedIn: ["ledgerflow", "uf-food-rag"] },
+      { name: "Linux", usedIn: [] },
+      { name: "Git", usedIn: ["ledgerflow", "uf-nestmate", "uf-wildlife", "axisxi"] },
+      { name: "Postman", usedIn: ["ledgerflow", "axisxi"] },
       { name: "Pytest", usedIn: ["ledgerflow"] },
       { name: "Locust & k6", usedIn: ["ledgerflow"] },
-      { name: "Postman", usedIn: ["ledgerflow", "axisxi"] },
-      { name: "Git", usedIn: ["ledgerflow", "uf-nestmate", "uf-wildlife", "axisxi"] },
-      { name: "Power BI & Tableau", usedIn: [] }
+      { name: "Power BI & Tableau", usedIn: [] },
+      { name: "JIRA", usedIn: [] },
+      { name: "Figma", usedIn: [] }
     ]
   }
 ];
