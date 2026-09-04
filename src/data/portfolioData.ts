@@ -52,6 +52,7 @@ export interface EducationItem {
   maxGpa: string;
   status: string;
   coursework?: string[];
+  awards?: string[];
 }
 
 export interface PublicationItem {
@@ -306,6 +307,36 @@ export const EXPERIENCES: ExperienceItem[] = [
       "REST APIs",
       "Agile"
     ]
+  },
+  {
+    id: "student-research-assistant",
+    role: "Student Research Assistant & Co-Author",
+    organization: "SRM Institute of Science and Technology",
+    department: "Deep Learning & Precision Agriculture Group",
+    location: "Kattankulathur, TN",
+    period: "Aug. 2023 – May 2024",
+    current: false,
+    type: "Academic & IEEE Research",
+    highlights: [
+      "Designed and implemented an end-to-end CNN-based image classification pipeline, including data augmentation, preprocessing, feature extraction, and model optimization.",
+      "Evaluated multiple CNN architectures and performed hyperparameter tuning, achieving ~92–94% classification accuracy and improving F1-score by ~18% over baseline models.",
+      "Co-authored a peer-reviewed research paper published at IEEE (ACCAI 2024) on automated crop disease detection, demonstrating the applicability of deep learning for precision agriculture."
+    ],
+    metrics: [
+      { label: "Classification Accuracy", value: "~92–94%" },
+      { label: "F1-Score Gain", value: "+18% Over Baselines" },
+      { label: "Published", value: "IEEE ACCAI 2024" }
+    ],
+    technologies: [
+      "Python",
+      "TensorFlow",
+      "Convolutional Neural Networks",
+      "Computer Vision",
+      "Data Augmentation",
+      "Scikit-learn",
+      "NumPy",
+      "Pandas"
+    ]
   }
 ];
 
@@ -324,7 +355,8 @@ export const EDUCATION: EducationItem[] = [
       "Concurrency & Multithreading",
       "Machine Learning & AI",
       "Cloud Computing Architectures"
-    ]
+    ],
+    awards: ["$4,500 Achievement Award Scholarship — University of Florida"]
   },
   {
     degree: "Bachelor of Technology (B.Tech) in Computer Science",

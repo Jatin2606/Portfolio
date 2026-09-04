@@ -98,6 +98,14 @@ export default function Education() {
                   </div>
                 )}
 
+                {/* Scholarship / Awards */}
+                {edu.awards && edu.awards.length > 0 && (
+                  <div className="mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-300">
+                    <Award className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                    <span>{edu.awards.join(", ")}</span>
+                  </div>
+                )}
+
               </div>
 
               {/* Card Footer status */}
