@@ -112,16 +112,13 @@ export default function Skills() {
                         key={skill.name}
                         onClick={() => setSelectedSkill(isSelected ? null : skill)}
                         onMouseEnter={() => setSelectedSkill(skill)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all text-left flex items-center gap-1.5 ${
+                        className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all text-left flex items-center ${
                           isSelected
                             ? "bg-sky-500 text-white shadow-sm ring-2 ring-sky-500/30"
                             : "bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700/60"
                         }`}
                       >
                         <span>{skill.name}</span>
-                        {skill.usedIn.length > 0 && (
-                          <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? "bg-white" : "bg-sky-400"}`} />
-                        )}
                       </button>
                     );
                   })}

@@ -36,15 +36,6 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
           {/* Left Column: Headline & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Status availability badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-xs font-medium text-slate-800 dark:text-slate-200 mb-6 shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Available for Full-Time Opportunities (Starting May 2026)</span>
-            </div>
-
             {/* Main Name Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
               Hi, I&apos;m{" "}
@@ -287,8 +278,8 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                     <span className="text-emerald-400 font-semibold">~50% Device Battery &amp; Storage</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
-                    <span className="text-slate-400">Availability:</span>
-                    <span className="text-emerald-400 font-semibold">Full-Time (May 2026 / Immediate)</span>
+                    <span className="text-slate-400">Core Focus:</span>
+                    <span className="text-emerald-400 font-semibold">Backend, Systems &amp; AI</span>
                   </div>
                 </div>
               )}
