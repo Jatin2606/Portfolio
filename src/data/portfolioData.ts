@@ -73,7 +73,7 @@ export const PERSONAL_INFO = {
   phone: "+1 (352) 709-2606",
   github: "https://github.com/Jatin2606",
   linkedin: "https://www.linkedin.com/in/jatin-shivaprakash-8a1667234/",
-  resumePdfUrl: "/resume.pdf",
+  resumePdfUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/resume.pdf`,
   availability: "Open to Full-Time Opportunities (Starting May 2026 / Immediate)",
   bioShort: "Master's student in Computer Science at the University of Florida (3.9 GPA) specializing in high-concurrency backend services, distributed systems, RAG / semantic search architectures, and performant web applications.",
   bioFull: [
