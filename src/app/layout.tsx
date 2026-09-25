@@ -4,22 +4,26 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
 export const metadata: Metadata = {
-  title: `${PERSONAL_INFO.name} | Software Engineer | Backend & AI Systems`,
-  description: `Portfolio of ${PERSONAL_INFO.name}, M.S. in Computer Science at University of Florida (3.9 GPA). Specializing in high-concurrency backend services, double-entry ledgers, and RAG/AI systems.`,
+  title: `${PERSONAL_INFO.name} | Software Engineer | Backend & Distributed Systems`,
+  description: `Portfolio of ${PERSONAL_INFO.name}, Software Engineer with 3+ years experience across Thoughtworks and DXC Technology, M.S. in CS at University of Florida (3.9 GPA). Specializing in distributed backend services, high-throughput APIs, and Agentic RAG.`,
   keywords: [
     "Jatin Shivaprakash",
     "Software Engineer",
     "Backend Engineer",
-    "Full-Stack Engineer",
-    "AI Engineer",
+    "Distributed Systems",
+    "Thoughtworks",
+    "DXC Technology",
     "University of Florida",
     "FastAPI",
     "Go",
-    "Python",
+    "ProtoActor",
+    "Kafka",
+    "Redis",
+    "Agentic RAG",
+    "LangGraph",
     "PostgreSQL",
-    "pgvector",
-    "LedgerFlow",
-    "Concurrency Control"
+    "Docker",
+    "Kubernetes"
   ],
   authors: [{ name: PERSONAL_INFO.name, url: PERSONAL_INFO.github }],
   creator: PERSONAL_INFO.name,

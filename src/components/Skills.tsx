@@ -9,7 +9,9 @@ import {
   Cloud, 
   Wrench, 
   CheckCircle2,
-  Info
+  Info,
+  Activity,
+  ShieldCheck
 } from "lucide-react";
 import { SKILL_CATEGORIES } from "@/data/portfolioData";
 
@@ -18,26 +20,28 @@ export default function Skills() {
 
   // Mapping project/experience IDs to human-readable labels
   const sourceLabelMap: Record<string, string> = {
+    thoughtworks: "Thoughtworks (Kafka services, LangGraph Agentic RAG & Supabase)",
+    "dxc-technology": "DXC Technology (FastAPI, PostgreSQL optimization, Celery & RabbitMQ)",
     ledgerflow: "LedgerFlow (FastAPI & PostgreSQL double-entry ledger)",
-    "uf-nestmate": "UF-NestMate (Go & React housing platform)",
-    "uf-wildlife": "UF Wildlife Ecology (SnapperGPS Node.js backend)",
-    feedfl: "FeedFL (pgvector RAG chatbot & FastAPI)",
-    "uf-food-rag": "FeedFL (pgvector RAG chatbot & FastAPI)",
-    axisxi: "Axisxi (High-traffic Django/Spring Boot APIs & Redis)",
+    "distributed-community-platform": "Distributed Platform (Go & ProtoActor actor-based system)",
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "Programming Languages":
+      case "Languages & Frontend":
         return <Code2 className="w-5 h-5 text-sky-500" />;
       case "Backend & APIs":
         return <Server className="w-5 h-5 text-emerald-500" />;
-      case "Databases & Vector Storage":
-        return <Database className="w-5 h-5 text-purple-500" />;
-      case "AI & Machine Learning":
-        return <Brain className="w-5 h-5 text-pink-500" />;
-      case "Cloud & Infrastructure":
-        return <Cloud className="w-5 h-5 text-amber-500" />;
+      case "AI & Retrieval":
+        return <Brain className="w-5 h-5 text-purple-500" />;
+      case "Databases & Search":
+        return <Database className="w-5 h-5 text-indigo-500" />;
+      case "Distributed Systems & Messaging":
+        return <Activity className="w-5 h-5 text-amber-500" />;
+      case "Cloud, DevOps & Observability":
+        return <Cloud className="w-5 h-5 text-cyan-500" />;
+      case "Testing & Security":
+        return <ShieldCheck className="w-5 h-5 text-rose-500" />;
       default:
         return <Wrench className="w-5 h-5 text-teal-500" />;
     }

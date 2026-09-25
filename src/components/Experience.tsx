@@ -34,7 +34,7 @@ export default function Experience() {
             Work Experience
           </h2>
           <p className="mt-2 text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Track record building production backend APIs, optimizing IoT device firmware schedules, and deploying AI-powered RAG applications.
+            3+ years engineering scalable backend services, Kafka-driven transaction pipelines, database optimizations, and governed Agentic RAG workflows across Thoughtworks and DXC Technology.
           </p>
         </div>
 

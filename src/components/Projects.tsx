@@ -32,7 +32,7 @@ export default function Projects() {
             Featured Systems &amp; Projects
           </h2>
           <p className="mt-2 text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Real implementations emphasizing concurrency control, distributed ledger invariants, and performant web services.
+            Architectural implementations emphasizing distributed actor models, double-entry financial ledgers, and high-concurrency benchmarks.
           </p>
         </div>
 

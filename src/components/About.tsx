@@ -34,31 +34,27 @@ export default function About() {
           {/* Narrative Text */}
           <div className="lg:col-span-7 space-y-5 text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
             <p>
-              I am a Software Engineer and Master&apos;s candidate in Computer Science at the{" "}
-              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.9 / 4.00 GPA)</strong>, 
-              building on an undergraduate foundation in Computer Science with a Specialization in Big Data Analytics from{" "}
-              <strong className="text-slate-900 dark:text-white font-semibold">SRM Institute of Science and Technology (8.55 / 10.00 GPA)</strong>.
+              I am a Software Engineer with <strong className="text-slate-900 dark:text-white font-semibold">3+ years of experience</strong> delivering 
+              distributed backend services, cloud-native architectures, and AI-enabled systems. Currently completing my Master&apos;s in Computer Science at the{" "}
+              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.9 / 4.00 GPA)</strong>.
             </p>
 
             <p>
-              My engineering focus centers on <span className="text-sky-600 dark:text-sky-400 font-semibold">backend architecture</span>,{" "}
-              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">concurrency control</span>, and{" "}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold">applied AI systems</span>. 
-              Whether it&apos;s architecting double-entry ledgers that benchmark at 340 req/s with PostgreSQL row-level locks, 
-              building RAG retrieval pipelines powered by <code className="font-mono text-sm bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">pgvector</code> and Llama-3.1-8B, 
-              or optimizing IoT firmware scheduling to extend device battery life by 50%, I care deeply about correctness, latency, and predictable system behavior.
+              My professional journey progressed from <span className="text-sky-600 dark:text-sky-400 font-semibold">DXC Technology</span>—where I built customer-facing REST APIs, 
+              optimized PostgreSQL queries with SQLAlchemy and indexing cutting latency by 18%, and implemented Celery/RabbitMQ notification pipelines with 78% automated test coverage—to{" "}
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Thoughtworks</span>, building Kafka-driven transaction services, governed RAG knowledge search with Supabase and pgvector (+15% retrieval speedup), 
+              and human-in-the-loop <span className="text-purple-600 dark:text-purple-400 font-semibold">Agentic RAG workflows</span> using LangGraph.
             </p>
 
             <p>
-              In production environments at Axisxi, I supported 40,000+ daily requests by implementing Redis caching layers, 
-              optimizing high-traffic MySQL schemas, and building RESTful endpoints in Python/Django and Java/Spring Boot. 
-              I am comfortable jumping between the application layer, database internals, and deployment infrastructure.
+              Whether it&apos;s designing double-entry ledgers that benchmark at 340 req/s with PostgreSQL row-level locks, 
+              engineering a 3-layer distributed community platform in Go using ProtoActor to eliminate shared-memory lock contention, 
+              or deploying containerized services with Docker, Kubernetes, AWS, and OpenTelemetry across multi-environment pipelines, 
+              I focus on correctness, latency, and predictable system behavior.
             </p>
 
             <p>
-              Beyond production backends, my background spans machine learning, distributed systems, and data engineering, 
-              with <strong className="text-slate-900 dark:text-white font-semibold">research published at IEEE</strong> on deep learning for precision agriculture 
-              (<em className="text-sky-600 dark:text-sky-400">&ldquo;Disease Detection in Arecanut using Convolutional Neural Network&rdquo;</em>, IEEE ACCAI 2024).
+              I bring feature ownership, automated testing rigor (pytest, Postman, RAGAS), and cross-functional collaboration across QA, platform, and engineering teams to deliver reliable backend systems and scalable AI capabilities.
             </p>
 
             {/* What I enjoy solving */}
@@ -70,19 +66,19 @@ export default function About() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Race condition prevention &amp; row-level ACID locks</span>
+                  <span>Kafka &amp; event-driven transaction architectures</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Sub-100ms p99 REST API architectures</span>
+                  <span>Agentic RAG with LangGraph, Tool Calling &amp; HITL</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Vector embeddings &amp; RAG retrieval pipelines</span>
+                  <span>Row-level ACID locks &amp; double-entry ledger invariants</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Spatial indexing with PostGIS &amp; normalized DB schemas</span>
+                  <span>ProtoActor distributed message passing &amp; simulation</span>
                 </li>
               </ul>
             </div>
@@ -92,39 +88,23 @@ export default function About() {
           {/* Right Column: Key Impact Highlight Cards */}
           <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             
-            {/* Stat Card 1 */}
+            {/* Stat Card 1: Experience */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500/40 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">Academic Excellence</span>
+                <span className="text-xs font-mono uppercase text-slate-400">Professional Experience</span>
                 <span className="p-1.5 rounded-lg bg-sky-500/10 text-sky-500">
                   <TrendingUp className="w-4 h-4" />
                 </span>
               </div>
               <div className="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">
-                3.90 <span className="text-sm font-normal text-slate-400">/ 4.00 GPA</span>
+                3+ Years <span className="text-sm font-normal text-slate-400">Industry Delivery</span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                University of Florida &middot; Master of Science in Computer Science
+                Software Engineer across Thoughtworks &amp; DXC Technology
               </p>
             </div>
 
-            {/* Stat Card 2: IEEE Publication */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-amber-500/40 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">IEEE Research Publication</span>
-                <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-500">
-                  <Layers className="w-4 h-4" />
-                </span>
-              </div>
-              <div className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 mt-2">
-                Deep Learning <span className="text-sm font-normal text-slate-400">(CNN)</span>
-              </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                IEEE ACCAI 2024 &middot; Disease Detection in Precision Agriculture
-              </p>
-            </div>
-
-            {/* Stat Card 3 */}
+            {/* Stat Card 2: Ledger Concurrency */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500/40 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono uppercase text-slate-400">Ledger Concurrency</span>
@@ -136,23 +116,39 @@ export default function About() {
                 340 <span className="text-sm font-normal text-slate-400">req/s</span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                LedgerFlow with 56ms p99 latency &amp; 0.00% error rate under 50 concurrent users
+                LedgerFlow 56ms p99 latency &amp; 0.00% error rate under 50 concurrent users
               </p>
             </div>
 
-            {/* Stat Card 4 */}
+            {/* Stat Card 3: Distributed Platform in Go */}
+            <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-amber-500/40 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase text-slate-400">Distributed Architecture</span>
+                <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-500">
+                  <Layers className="w-4 h-4" />
+                </span>
+              </div>
+              <div className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 mt-2">
+                Go &middot; ProtoActor
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                3-Layer distributed platform with actor-based concurrency &amp; simulation
+              </p>
+            </div>
+
+            {/* Stat Card 4: Agentic RAG & AI */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-purple-500/40 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">Production Scale</span>
+                <span className="text-xs font-mono uppercase text-slate-400">Enterprise AI</span>
                 <span className="p-1.5 rounded-lg bg-purple-500/10 text-purple-500">
                   <Database className="w-4 h-4" />
                 </span>
               </div>
               <div className="text-3xl font-extrabold text-purple-600 dark:text-purple-400 mt-2">
-                40,000+ <span className="text-sm font-normal text-slate-400">req/day</span>
+                Agentic RAG
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                Axisxi production APIs with Redis caching &amp; 30% query response time cut
+                LangGraph, Tool Calling, HITL &amp; Supabase pgvector (+15% retrieval speed)
               </p>
             </div>
 

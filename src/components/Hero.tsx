@@ -22,7 +22,7 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenResumeModal }: HeroProps) {
-  const [activeTab, setActiveTab] = useState<"ledger" | "rag" | "specs">("ledger");
+  const [activeTab, setActiveTab] = useState<"ledger" | "distributed" | "rag" | "specs">("ledger");
 
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
@@ -48,19 +48,22 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
             <p className="mt-3 text-xl sm:text-2xl font-medium text-slate-700 dark:text-slate-300">
               Software Engineer &middot;{" "}
               <span className="font-mono text-sky-600 dark:text-sky-400 text-lg sm:text-xl">
-                Backend, Full-Stack &amp; AI Systems
+                Backend, Distributed Systems &amp; Agentic AI
               </span>
             </p>
 
             {/* Concise Bio */}
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-              M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.9 GPA)</strong>. 
-              I design concurrency-safe distributed backends, high-throughput APIs, RAG semantic search pipelines, and robust full-stack applications.
+              Software Engineer with <strong className="text-slate-800 dark:text-slate-200 font-semibold">3+ years of experience</strong> building 
+              high-throughput backend services, distributed systems, and enterprise AI applications across{" "}
+              <strong className="text-slate-800 dark:text-slate-200 font-semibold">Thoughtworks</strong> and{" "}
+              <strong className="text-slate-800 dark:text-slate-200 font-semibold">DXC Technology</strong>. 
+              Currently completing an M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.9 GPA)</strong>.
             </p>
 
             {/* Core Competencies Chips */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {["Python & FastAPI", "Go Systems", "PostgreSQL & pgvector", "Distributed Ledger Design", "Docker & CI/CD", "RAG & LLMs"].map((chip) => (
+              {["Python & FastAPI", "Go & ProtoActor", "Kafka & Redis", "Agentic RAG & LangGraph", "Docker & Kubernetes", "PostgreSQL & pgvector"].map((chip) => (
                 <span 
                   key={chip}
                   className="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
@@ -157,10 +160,10 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               </div>
 
               {/* Tab Selector */}
-              <div className="flex items-center gap-2 mb-4 bg-slate-950/60 p-1 rounded-lg border border-slate-800/60">
+              <div className="flex items-center gap-1.5 mb-4 bg-slate-950/60 p-1 rounded-lg border border-slate-800/60">
                 <button
                   onClick={() => setActiveTab("ledger")}
-                  className={`flex-1 py-1.5 px-2 rounded text-[11px] transition-all text-center ${
+                  className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
                     activeTab === "ledger" 
                       ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
                       : "text-slate-400 hover:text-slate-200"
@@ -169,24 +172,34 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   LedgerFlow
                 </button>
                 <button
+                  onClick={() => setActiveTab("distributed")}
+                  className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
+                    activeTab === "distributed" 
+                      ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
+                      : "text-slate-400 hover:text-slate-200"
+                  }`}
+                >
+                  Go Distributed
+                </button>
+                <button
                   onClick={() => setActiveTab("rag")}
-                  className={`flex-1 py-1.5 px-2 rounded text-[11px] transition-all text-center ${
+                  className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
                     activeTab === "rag" 
                       ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
-                  FeedFL
+                  Agentic RAG
                 </button>
                 <button
                   onClick={() => setActiveTab("specs")}
-                  className={`flex-1 py-1.5 px-2 rounded text-[11px] transition-all text-center ${
+                  className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
                     activeTab === "specs" 
                       ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
-                  System Specs
+                  Specs
                 </button>
               </div>
 
@@ -227,34 +240,66 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 </div>
               )}
 
-              {activeTab === "rag" && (
+              {activeTab === "distributed" && (
                 <div className="space-y-3 animate-in fade-in duration-200">
                   <div className="flex items-center justify-between text-slate-400">
-                    <span>Engine: pgvector + Llama-3.1-8B</span>
-                    <span className="text-emerald-400">FeedFL Production</span>
+                    <span>Engine: Go 1.22 + ProtoActor</span>
+                    <span className="text-emerald-400">Distributed Platform</span>
                   </div>
 
                   <div className="space-y-2 text-[11px]">
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Semantic Embedding:</span>
-                      <span className="text-sky-400 font-semibold">pgvector (Cosine)</span>
+                      <span className="text-slate-400">Architecture Layers:</span>
+                      <span className="text-sky-400 font-semibold">API Gateway &middot; Actors &middot; Simulator</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">LLM Fallback Architecture:</span>
-                      <span className="text-emerald-400 font-semibold">Mistral-Small-3.1</span>
+                      <span className="text-slate-400">Actor Concurrency:</span>
+                      <span className="text-emerald-400 font-semibold">Zero-Mutex Message Passing</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Query Optimization:</span>
-                      <span className="text-sky-400 font-semibold">30% Latency Cut</span>
+                      <span className="text-slate-400">Load Simulation:</span>
+                      <span className="text-sky-400 font-semibold">1,000s User Activities</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Production Adoption:</span>
-                      <span className="text-white font-semibold">200+ Users &middot; 120 Providers</span>
+                      <span className="text-slate-400">In-Memory Dispatch:</span>
+                      <span className="text-white font-semibold">Sub-10ms Mailbox Latency</span>
                     </div>
                   </div>
 
                   <div className="p-2 rounded bg-slate-950/40 text-[10px] text-slate-400 border border-slate-800/40">
-                    <span className="text-emerald-400">&gt;</span> spatial_search: PostGIS ST_DWithin + normalized vendor schema
+                    <span className="text-sky-400">$</span> go run Simulator.go -users=5000 -actors=EngineActor,UserActor
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "rag" && (
+                <div className="space-y-3 animate-in fade-in duration-200">
+                  <div className="flex items-center justify-between text-slate-400">
+                    <span>Engine: LangGraph + Agentic RAG</span>
+                    <span className="text-emerald-400">Thoughtworks Production</span>
+                  </div>
+
+                  <div className="space-y-2 text-[11px]">
+                    <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
+                      <span className="text-slate-400">Hybrid Retrieval:</span>
+                      <span className="text-sky-400 font-semibold">Supabase pgvector + Reranking</span>
+                    </div>
+                    <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
+                      <span className="text-slate-400">Retrieval Speedup:</span>
+                      <span className="text-emerald-400 font-semibold">+15% Query Latency Cut</span>
+                    </div>
+                    <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
+                      <span className="text-slate-400">Governed Execution:</span>
+                      <span className="text-sky-400 font-semibold">5 Actions with HITL &amp; RBAC</span>
+                    </div>
+                    <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
+                      <span className="text-slate-400">Quality &amp; Regression:</span>
+                      <span className="text-white font-semibold">66% Automated (RAGAS &amp; Pytest)</span>
+                    </div>
+                  </div>
+
+                  <div className="p-2 rounded bg-slate-950/40 text-[10px] text-slate-400 border border-slate-800/40">
+                    <span className="text-emerald-400">&gt;</span> rag_pipeline: LangChain + Hybrid Search + Permission-Aware Citations
                   </div>
                 </div>
               )}
@@ -262,24 +307,24 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               {activeTab === "specs" && (
                 <div className="space-y-2 text-[11px] animate-in fade-in duration-200">
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
+                    <span className="text-slate-400">Experience:</span>
+                    <span className="text-white font-semibold">3+ Years (Thoughtworks &middot; DXC)</span>
+                  </div>
+                  <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Education:</span>
                     <span className="text-white font-semibold">M.S. CS @ Univ. of Florida (3.9 GPA)</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
-                    <span className="text-slate-400">Undergrad:</span>
-                    <span className="text-white font-semibold">B.Tech Big Data Analytics (8.55 GPA)</span>
+                    <span className="text-slate-400">Certifications:</span>
+                    <span className="text-sky-400 font-semibold">AWS Cloud Ops &middot; Coursera ML</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
-                    <span className="text-slate-400">Daily Scale:</span>
-                    <span className="text-sky-400 font-semibold">40,000+ Requests/Day (Axisxi)</span>
+                    <span className="text-slate-400">Testing &amp; QA:</span>
+                    <span className="text-emerald-400 font-semibold">78% DXC &middot; 66% Thoughtworks</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
-                    <span className="text-slate-400">IoT Impact:</span>
-                    <span className="text-emerald-400 font-semibold">~50% Device Battery &amp; Storage</span>
-                  </div>
-                  <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
-                    <span className="text-slate-400">Core Focus:</span>
-                    <span className="text-emerald-400 font-semibold">Backend, Systems &amp; AI</span>
+                    <span className="text-slate-400">Core Stack:</span>
+                    <span className="text-emerald-400 font-semibold">Python, Go, Kafka, Docker, K8s</span>
                   </div>
                 </div>
               )}
