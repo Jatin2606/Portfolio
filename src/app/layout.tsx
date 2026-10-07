@@ -5,7 +5,7 @@ import { PERSONAL_INFO } from "@/data/portfolioData";
 
 export const metadata: Metadata = {
   title: `${PERSONAL_INFO.name} | Software Engineer | Backend & Distributed Systems`,
-  description: `Portfolio of ${PERSONAL_INFO.name}, Software Engineer with 3+ years experience across Thoughtworks and DXC Technology, M.S. in CS at University of Florida (3.88 GPA). Specializing in backend development, Model Context Protocol (MCP), distributed systems, high-throughput APIs, and cloud-native architectures.`,
+  description: `Portfolio of ${PERSONAL_INFO.name}, Software Engineer with 3+ years experience across Thoughtworks and DXC Technology, M.S. in CS at University of Florida (3.9 GPA). Specializing in backend development, Model Context Protocol (MCP), distributed systems, high-throughput APIs, and cloud-native architectures.`,
   keywords: [
     "Jatin Shivaprakash",
     "Software Engineer",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://jatin2606.github.io/Portfolio/",
     title: `${PERSONAL_INFO.name} | Software Engineer`,
-    description: `M.S. in CS at University of Florida (3.88 GPA). Building concurrency-safe backend systems, Model Context Protocol (MCP) integrations, distributed ledgers, and cloud-native AI architectures.`,
+    description: `M.S. in CS at University of Florida (3.9 GPA). Building concurrency-safe backend systems, Model Context Protocol (MCP) integrations, distributed ledgers, and cloud-native AI architectures.`,
     siteName: `${PERSONAL_INFO.name} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
     title: `${PERSONAL_INFO.name} | Software Engineer`,
-    description: `M.S. in CS at University of Florida (3.88 GPA). Concurrency, distributed ledgers, Model Context Protocol, and applied cloud systems.`,
+    description: `M.S. in CS at University of Florida (3.9 GPA). Concurrency, distributed ledgers, Model Context Protocol, and applied cloud systems.`,
   },
   icons: {
     icon: "/favicon.ico",

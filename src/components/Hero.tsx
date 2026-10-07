@@ -58,7 +58,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               scalable backend services, distributed systems, and production-ready cloud architectures across{" "}
               <strong className="text-slate-800 dark:text-slate-200 font-semibold">Thoughtworks</strong> and{" "}
               <strong className="text-slate-800 dark:text-slate-200 font-semibold">DXC Technology</strong>. 
-              Currently completing an M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.88 GPA)</strong>.
+              Currently completing an M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.9 GPA)</strong>.
             </p>
 
             {/* Core Competencies Chips */}
@@ -312,7 +312,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Education:</span>
-                    <span className="text-white font-semibold">M.S. CS @ Univ. of Florida (3.88 GPA)</span>
+                    <span className="text-white font-semibold">M.S. CS @ Univ. of Florida (3.9 GPA)</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Certifications:</span>

@@ -36,7 +36,7 @@ export default function About() {
             <p>
               I am a Software Engineer with <strong className="text-slate-900 dark:text-white font-semibold">3+ years of experience</strong> delivering 
               distributed backend services, cloud-native architectures, and AI-enabled systems. Currently completing my Master&apos;s in Computer Science at the{" "}
-              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.88 / 4.00 GPA)</strong>.
+              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.9 / 4.00 GPA)</strong>.
             </p>
 
             <p>
