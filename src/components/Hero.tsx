@@ -22,7 +22,7 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenResumeModal }: HeroProps) {
-  const [activeTab, setActiveTab] = useState<"ledger" | "distributed" | "rag" | "specs">("ledger");
+  const [activeTab, setActiveTab] = useState<"ledger" | "feedfl" | "mcp" | "specs">("ledger");
 
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
@@ -48,22 +48,22 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
             <p className="mt-3 text-xl sm:text-2xl font-medium text-slate-700 dark:text-slate-300">
               Software Engineer &middot;{" "}
               <span className="font-mono text-sky-600 dark:text-sky-400 text-lg sm:text-xl">
-                Backend, Distributed Systems &amp; Agentic AI
+                {PERSONAL_INFO.subRole}
               </span>
             </p>
 
             {/* Concise Bio */}
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-              Software Engineer with <strong className="text-slate-800 dark:text-slate-200 font-semibold">3+ years of experience</strong> building 
-              high-throughput backend services, distributed systems, and enterprise AI applications across{" "}
+              Software Engineer with <strong className="text-slate-800 dark:text-slate-200 font-semibold">3+ years of experience</strong> delivering 
+              scalable backend services, distributed systems, and production-ready cloud architectures across{" "}
               <strong className="text-slate-800 dark:text-slate-200 font-semibold">Thoughtworks</strong> and{" "}
               <strong className="text-slate-800 dark:text-slate-200 font-semibold">DXC Technology</strong>. 
-              Currently completing an M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.9 GPA)</strong>.
+              Currently completing an M.S. in Computer Science at the <strong className="text-slate-800 dark:text-slate-200 font-semibold">University of Florida (3.88 GPA)</strong>.
             </p>
 
             {/* Core Competencies Chips */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {["Python & FastAPI", "Go & ProtoActor", "Kafka & Redis", "Agentic RAG & LangGraph", "Docker & Kubernetes", "PostgreSQL & pgvector"].map((chip) => (
+              {["Python & FastAPI", "Model Context Protocol (MCP)", "Kafka & Redis", "RAG & LangGraph", "Docker & Kubernetes", "PostgreSQL & pgvector"].map((chip) => (
                 <span 
                   key={chip}
                   className="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
@@ -172,24 +172,24 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   LedgerFlow
                 </button>
                 <button
-                  onClick={() => setActiveTab("distributed")}
+                  onClick={() => setActiveTab("feedfl")}
                   className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
-                    activeTab === "distributed" 
+                    activeTab === "feedfl" 
                       ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
-                  Go Distributed
+                  FeedFL
                 </button>
                 <button
-                  onClick={() => setActiveTab("rag")}
+                  onClick={() => setActiveTab("mcp")}
                   className={`flex-1 py-1.5 px-1.5 rounded text-[10px] sm:text-[11px] transition-all text-center ${
-                    activeTab === "rag" 
+                    activeTab === "mcp" 
                       ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 font-semibold" 
                       : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
-                  Agentic RAG
+                  MCP &amp; APIs
                 </button>
                 <button
                   onClick={() => setActiveTab("specs")}
@@ -240,66 +240,66 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 </div>
               )}
 
-              {activeTab === "distributed" && (
+              {activeTab === "feedfl" && (
                 <div className="space-y-3 animate-in fade-in duration-200">
                   <div className="flex items-center justify-between text-slate-400">
-                    <span>Engine: Go 1.22 + ProtoActor</span>
-                    <span className="text-emerald-400">Distributed Platform</span>
+                    <span>Target: POST /api/v1/chat/search</span>
+                    <span className="text-emerald-400">Supabase &amp; FastAPI</span>
                   </div>
 
                   <div className="space-y-2 text-[11px]">
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Architecture Layers:</span>
-                      <span className="text-sky-400 font-semibold">API Gateway &middot; Actors &middot; Simulator</span>
+                      <span className="text-slate-400">RAG Chatbot:</span>
+                      <span className="text-sky-400 font-semibold">Llama-3.1-8B + Mistral Fallback</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Actor Concurrency:</span>
-                      <span className="text-emerald-400 font-semibold">Zero-Mutex Message Passing</span>
+                      <span className="text-slate-400">Active Scale:</span>
+                      <span className="text-emerald-400 font-semibold">200+ Users &middot; 120 Providers</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Load Simulation:</span>
-                      <span className="text-sky-400 font-semibold">1,000s User Activities</span>
+                      <span className="text-slate-400">Spatial Search:</span>
+                      <span className="text-sky-400 font-semibold">PostGIS ST_DWithin (-30% Latency)</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">In-Memory Dispatch:</span>
-                      <span className="text-white font-semibold">Sub-10ms Mailbox Latency</span>
+                      <span className="text-slate-400">Cross-Platform App:</span>
+                      <span className="text-white font-semibold">Flutter iOS/Android + RBAC Dashboards</span>
                     </div>
                   </div>
 
                   <div className="p-2 rounded bg-slate-950/40 text-[10px] text-slate-400 border border-slate-800/40">
-                    <span className="text-sky-400">$</span> go run Simulator.go -users=5000 -actors=EngineActor,UserActor
+                    <span className="text-emerald-400">&gt;</span> spatial_rag: ST_DWithin(geom, user_loc, 8046) + pgvector semantic match
                   </div>
                 </div>
               )}
 
-              {activeTab === "rag" && (
+              {activeTab === "mcp" && (
                 <div className="space-y-3 animate-in fade-in duration-200">
                   <div className="flex items-center justify-between text-slate-400">
-                    <span>Engine: LangGraph + Agentic RAG</span>
+                    <span>Target: FastAPI + MCP Server</span>
                     <span className="text-emerald-400">Thoughtworks Production</span>
                   </div>
 
                   <div className="space-y-2 text-[11px]">
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Hybrid Retrieval:</span>
-                      <span className="text-sky-400 font-semibold">Supabase pgvector + Reranking</span>
+                      <span className="text-slate-400">Protocol &amp; Tools:</span>
+                      <span className="text-sky-400 font-semibold">Model Context Protocol (MCP) &amp; Tool Calling</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Retrieval Speedup:</span>
-                      <span className="text-emerald-400 font-semibold">+15% Query Latency Cut</span>
+                      <span className="text-slate-400">Tool Calling Gain:</span>
+                      <span className="text-emerald-400 font-semibold">-12% Integration Handling Time</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Governed Execution:</span>
-                      <span className="text-sky-400 font-semibold">5 Actions with HITL &amp; RBAC</span>
+                      <span className="text-slate-400">Security &amp; Auth:</span>
+                      <span className="text-sky-400 font-semibold">OAuth 2.0 &middot; JWT &middot; RBAC Guardrails</span>
                     </div>
                     <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between items-center">
-                      <span className="text-slate-400">Quality &amp; Regression:</span>
-                      <span className="text-white font-semibold">66% Automated (RAGAS &amp; Pytest)</span>
+                      <span className="text-slate-400">Production Scale:</span>
+                      <span className="text-white font-semibold">50K+ Monthly Requests &middot; 78% Coverage</span>
                     </div>
                   </div>
 
                   <div className="p-2 rounded bg-slate-950/40 text-[10px] text-slate-400 border border-slate-800/40">
-                    <span className="text-emerald-400">&gt;</span> rag_pipeline: LangChain + Hybrid Search + Permission-Aware Citations
+                    <span className="text-sky-400">$</span> mcp_tools: [register_tool, schema_validate, rbac_verify, emit_otel_span]
                   </div>
                 </div>
               )}
@@ -312,7 +312,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Education:</span>
-                    <span className="text-white font-semibold">M.S. CS @ Univ. of Florida (3.9 GPA)</span>
+                    <span className="text-white font-semibold">M.S. CS @ Univ. of Florida (3.88 GPA)</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Certifications:</span>
@@ -320,11 +320,11 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Testing &amp; QA:</span>
-                    <span className="text-emerald-400 font-semibold">78% DXC &middot; 66% Thoughtworks</span>
+                    <span className="text-emerald-400 font-semibold">78% Thoughtworks &middot; 74% DXC</span>
                   </div>
                   <div className="p-2 rounded bg-slate-950/70 border border-slate-800 flex justify-between">
                     <span className="text-slate-400">Core Stack:</span>
-                    <span className="text-emerald-400 font-semibold">Python, Go, Kafka, Docker, K8s</span>
+                    <span className="text-emerald-400 font-semibold">Python, Go, MCP, Kafka, Docker, K8s</span>
                   </div>
                 </div>
               )}

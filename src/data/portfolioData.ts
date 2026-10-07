@@ -86,24 +86,24 @@ export interface SkillCategory {
 export const PERSONAL_INFO = {
   name: "Jatin Shivaprakash",
   role: "Software Engineer",
-  subRole: "Backend · Distributed Systems · AI & Agentic RAG",
+  subRole: "Backend · Distributed Systems · Cloud-Native & AI/MCP",
   location: "Gainesville, FL",
   email: "jatinshivaprakash43@gmail.com",
   phone: "+1 (352) 477-3386",
   github: "https://github.com/Jatin2606",
-  linkedin: "https://www.linkedin.com/in/jatins26622/",
+  linkedin: "https://www.linkedin.com/in/jatinshivaprakash/",
   resumePdfUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/resume.pdf`,
-  bioShort: "Software Engineer with 3+ years of experience in backend development, distributed systems, cloud-native delivery, and AI-enabled applications across Thoughtworks and DXC Technology.",
+  bioShort: "Software Engineer with 3+ years of experience in backend development, distributed systems, APIs, databases, and cloud-native applications across Thoughtworks and DXC Technology.",
   bioFull: [
-    "I am a Software Engineer with 3+ years of experience specializing in backend systems, distributed architectures, cloud-native delivery, and AI-enabled applications. Currently pursuing an M.S. in Computer Science at the University of Florida.",
-    "My professional experience progressed from building high-throughput REST APIs, database optimization, and Celery/RabbitMQ microservices at DXC Technology to Kafka-driven transaction services, governed RAG knowledge search, and Agentic RAG with LangGraph and human-in-the-loop controls at Thoughtworks.",
-    "I bring end-to-end feature ownership, rigorous testing (pytest, RAGAS, Postman), containerized delivery (Docker, Kubernetes, AWS), and production observability (OpenTelemetry, CloudWatch) to deliver reliable backend systems and scalable AI capabilities."
+    "I am a Software Engineer with 3+ years of experience specializing in backend systems, distributed architectures, APIs, databases, and cloud-native delivery. Currently pursuing an M.S. in Computer Science at the University of Florida.",
+    "My professional journey progressed from developing production REST services and optimizing PostgreSQL at DXC Technology to owning backend features, secure integrations with Model Context Protocol (MCP) and Tool Calling, and deployment workflows at Thoughtworks.",
+    "I bring strong problem solving, feature ownership, and cross-functional collaboration across QA, platform, and engineering teams, delivering reliable backend systems, secure integrations, scalable services, and production-ready cloud systems."
   ],
   stats: [
     { label: "Experience", value: "3+ Years", highlight: "Thoughtworks & DXC Technology" },
     { label: "Ledger Engine", value: "340 req/s", highlight: "56ms p99 Concurrency Safety" },
-    { label: "Distributed Systems", value: "Go / ProtoActor", highlight: "3-Layer Actor Architecture" },
-    { label: "Enterprise AI", value: "Agentic RAG", highlight: "LangGraph, HITL & pgvector" }
+    { label: "Production Scale", value: "50K+ Req/Mo", highlight: "Docker, K8s, AWS & OpenTelemetry" },
+    { label: "AI & Integrations", value: "MCP & RAG", highlight: "Model Context Protocol & pgvector" }
   ]
 };
 
@@ -181,77 +181,67 @@ export const PROJECTS: ProjectDetail[] = [
     featured: true
   },
   {
-    id: "distributed-community-platform",
-    title: "Distributed Community Platform",
-    subtitle: "High-Throughput Actor-Based Distributed Platform in Go with ProtoActor",
-    period: "Aug. 2024 – Dec. 2024",
-    role: "Distributed Systems Developer",
-    summary: "A 3-layer distributed platform built in Go utilizing the ProtoActor framework and REST APIs. Features a clean separation of HTTP API handling, actor messaging, and simulation workloads to deliver concurrent execution under heavy loads.",
-    problem: "Traditional monolithic web backends struggle with thread contention, blocking I/O, and complex state synchronization when handling thousands of concurrent user interactions such as posts, votes, comments, and karma recalculations.",
-    solution: "Engineered an asynchronous, message-driven architecture using Go and ProtoActor. Deployed an EngineActor to manage global state and routing, decoupled UserActors for individual client sessions, and built a multi-process load simulator to evaluate responsiveness under thousands of user activities and validate distributed execution.",
-    architecture: {
-      overview: "3-layer distributed actor model cleanly separating external HTTP API ingress, internal actor mailboxes/message dispatch, and a standalone load simulation engine.",
-      components: [
-        "API Gateway Layer: Go HTTP route handlers parsing incoming REST requests and delegating to the actor system",
-        "EngineActor: Central coordinator managing sub-actor lifecycles, user registries, and cross-actor routing",
-        "UserActor: Isolated state machine for each connected entity, handling timeline aggregation and karma updates",
-        "Simulator Engine: Multi-process client simulator generating thousands of synthetic user activities for stress testing",
-        "In-Memory State & Mailboxes: Asynchronous non-blocking message queues guaranteeing single-threaded execution per actor"
-      ],
-      dataFlow: "Client HTTP Request → Go REST Handler translates to Actor Message → Context.Request to EngineActor → Dispatched to Target UserActor mailbox → Actor processes state update without locks → Synchronous response returned to HTTP client."
-    },
-    technicalHighlights: [
-      "Engineered a 3-layer distributed platform in Go with ProtoActor and REST APIs, separating API handling, actor messaging, and simulation workloads to improve scalability and maintainability.",
-      "Designed and load-tested REST APIs for community interactions, using actor-based concurrency and multi-process simulation to evaluate responsiveness under thousands of user activities.",
-      "Eliminated shared-memory locking contention by leveraging isolated actor state and asynchronous message-passing mailboxes.",
-      "Constructed a comprehensive synthetic simulation suite validating distributed execution and latency under high concurrency."
-    ],
-    concurrencyAndReliability: [
-      "Actor-Isolated State: Zero mutexes or shared memory between concurrent users; state mutations occur sequentially within the actor's dedicated mailbox loop.",
-      "Supervisor Hierarchies: ProtoActor supervision strategies with automatic actor restart and failure isolation.",
-      "Asynchronous Messaging: Non-blocking tell and request-response patterns preventing HTTP worker thread starvation."
-    ],
-    benchmarks: [
-      { metric: "Concurrency Model", value: "ProtoActor", details: "Zero-mutex message passing in Go" },
-      { metric: "Architecture", value: "3 Layers", details: "API Gateway, Actor Dispatch, Simulator" },
-      { metric: "Load Simulation", value: "1,000s Users", details: "Multi-process concurrent activity load tested" },
-      { metric: "Throughput", value: "Sub-10ms", details: "Low-latency in-memory message processing" }
-    ],
-    technologies: ["Go", "ProtoActor", "REST APIs", "Distributed Systems", "Actor Model", "Concurrency", "Goroutines", "HTTP Handlers"],
-    githubUrl: "https://github.com/Jatin2606/Reddit_clone",
-    featured: true
-  },
-  {
     id: "feedfl",
-    title: "FeedFL — RAG Knowledge Search",
-    subtitle: "AI-Powered Food Recovery Engine with pgvector & Hybrid Retrieval",
+    title: "FeedFL",
+    subtitle: "AI-Powered Surplus Food Platform with Grounded RAG & PostGIS",
     period: "Jan. 2026 – Apr. 2026",
-    role: "Backend & AI Engineer",
-    summary: "A production food surplus platform connecting providers with communities in need, powered by FastAPI, PostgreSQL, Supabase, pgvector semantic search, and PostGIS geospatial proximity filtering.",
-    problem: "Food recovery networks require immediate discovery of perishable surplus within specific geographic radii, while users require natural language conversational guidance.",
-    solution: "Architected a dual-retrieval pipeline combining PostGIS geospatial queries with pgvector semantic vector search, paired with LLM fallback routing for grounded provider recommendations.",
+    role: "Full-Stack & AI Engineer",
+    summary: "A production food surplus platform connecting providers with communities in need, engineered with Flutter iOS/Android, FastAPI, PostgreSQL, Supabase, pgvector semantic search, and PostGIS geospatial proximity filtering.",
+    problem: "Food recovery networks require immediate discovery of perishable surplus within specific geographic radii, while users require natural language conversational guidance with grounded provider verification.",
+    solution: "Engineered and tested a Flutter mobile app with role-based dashboards and a FastAPI backend pairing pgvector semantic vector search with PostGIS geospatial proximity search, Llama-3.1-8B and Mistral fallback routing, reducing query latency by 30% and setup by 40%.",
     architecture: {
-      overview: "Hybrid retrieval backend pairing vector semantic embeddings with spatial SQL indexing and serverless edge compute.",
+      overview: "Hybrid retrieval backend pairing vector semantic embeddings with spatial SQL indexing and Supabase serverless edge compute.",
       components: [
+        "Flutter Mobile Client: Role-based dashboards for surplus donors and community recipients",
         "FastAPI Service: REST endpoints handling intake, inventory, and query pipelines",
         "pgvector Semantic Index: Cosine similarity vector search over food provider inventories",
         "PostGIS Geo-Engine: ST_DWithin spatial bounding for proximity-based filtering",
-        "Supabase Edge Functions: Serverless event handlers triggering real-time notifications"
+        "Supabase & Edge Functions: Managed PostgreSQL, Edge Functions, and built-in Authentication"
       ],
-      dataFlow: "User query → FastAPI generates text embeddings → PostGIS filters bounding perimeter → pgvector retrieves top-k semantic matches → LLM synthesizes grounded recommendation."
+      dataFlow: "User conversational query → FastAPI embeds text → PostGIS filters bounding perimeter → pgvector retrieves top-k semantic matches → Llama-3.1-8B generates grounded recommendations."
     },
     technicalHighlights: [
-      "Built a scalable RESTful API in FastAPI and PostgreSQL connecting food providers with surplus meals to people in need.",
-      "Designed a RAG chatbot using pgvector semantic search with Llama-3.1-8B and Mistral fallback for grounded recommendations.",
-      "Architected PostGIS geospatial proximity search cutting query latency up to 30%, and migrated to Supabase cutting setup time by 40%."
+      "Developed a grounded RAG chatbot using pgvector Semantic Search with Llama-3.1-8B and Mistral-Small-3.1 fallback, delivering context-aware provider recommendations to 200+ users across 120 Palm Beach County food providers.",
+      "Engineered and tested Flutter iOS/Android application with role-based dashboards and FastAPI backend using PostgreSQL, PostGIS, AWS EC2/RDS, Supabase, Edge Functions, and Authentication, reducing latency 30% and setup 40%."
     ],
     benchmarks: [
       { metric: "Query Latency", value: "-30%", details: "Reduced via PostGIS geospatial proximity indexing" },
       { metric: "Setup Time", value: "-40%", details: "Reduced through Supabase & Edge Functions migration" },
       { metric: "Active Scale", value: "200+ Users", details: "Over 120 food providers onboarded in Palm Beach County" }
     ],
-    technologies: ["FastAPI", "PostgreSQL", "pgvector", "PostGIS", "Supabase", "Flutter", "Python"],
+    technologies: ["Flutter", "FastAPI", "PostgreSQL", "RAG", "pgvector", "PostGIS", "Supabase", "AWS (EC2, RDS)", "Edge Functions", "Python"],
     githubUrl: "https://github.com/Jatin2606",
+    featured: true
+  },
+  {
+    id: "distributed-community-platform",
+    title: "Distributed Community Platform",
+    subtitle: "High-Throughput Actor-Based Distributed Platform in Go with ProtoActor",
+    period: "Aug. 2024 – Dec. 2024",
+    role: "Distributed Systems Developer",
+    summary: "A 3-layer distributed platform built in Go utilizing the ProtoActor framework and REST APIs. Features a clean separation of HTTP API handling, actor messaging, and simulation workloads to deliver concurrent execution under heavy loads.",
+    problem: "Traditional monolithic web backends struggle with thread contention, blocking I/O, and complex state synchronization when handling thousands of concurrent user interactions.",
+    solution: "Engineered an asynchronous, message-driven architecture using Go and ProtoActor. Deployed an EngineActor to manage global state and routing, decoupled UserActors for individual client sessions, and built a multi-process load simulator to evaluate responsiveness.",
+    architecture: {
+      overview: "3-layer distributed actor model cleanly separating external HTTP API ingress, internal actor mailboxes/message dispatch, and a standalone load simulation engine.",
+      components: [
+        "API Gateway Layer: Go HTTP route handlers parsing incoming REST requests and delegating to the actor system",
+        "EngineActor: Central coordinator managing sub-actor lifecycles, user registries, and cross-actor routing",
+        "UserActor: Isolated state machine for each connected entity, handling timeline aggregation and karma updates",
+        "Simulator Engine: Multi-process client simulator generating thousands of synthetic user activities for stress testing"
+      ],
+      dataFlow: "Client HTTP Request → Go REST Handler translates to Actor Message → Context.Request to EngineActor → Dispatched to Target UserActor mailbox → Actor processes state update without locks → Synchronous response returned to HTTP client."
+    },
+    technicalHighlights: [
+      "Engineered a 3-layer distributed platform in Go with ProtoActor and REST APIs, separating API handling, actor messaging, and simulation workloads to improve scalability and maintainability.",
+      "Designed and load-tested REST APIs for community interactions, using actor-based concurrency and multi-process simulation to evaluate responsiveness under thousands of user activities."
+    ],
+    benchmarks: [
+      { metric: "Concurrency Model", value: "ProtoActor", details: "Zero-mutex message passing in Go" },
+      { metric: "Architecture", value: "3 Layers", details: "API Gateway, Actor Dispatch, Simulator" }
+    ],
+    technologies: ["Go", "ProtoActor", "REST APIs", "Distributed Systems", "Actor Model", "Concurrency", "Goroutines"],
+    githubUrl: "https://github.com/Jatin2606/Reddit_clone",
     featured: false
   }
 ];
@@ -266,18 +256,18 @@ export const EXPERIENCES: ExperienceItem[] = [
     current: true,
     type: "Full-Time Industry Experience",
     highlights: [
-      "Build backend transaction services with Python, FastAPI, PostgreSQL, Redis, and Kafka, delivering 10+ REST endpoints while owning requirements clarification, implementation, testing, integration, and production validation across client workflows.",
-      "Develop governed RAG knowledge search with LangChain, Supabase, pgvector, Hybrid Retrieval, and Reranking, improving retrieval time by 15% while enabling permission-aware citations and structured discovery for operations teams.",
-      "Extend operations approval workflows with Agentic RAG, LangGraph, Tool Calling, HITL, and RBAC, integrating 5 governed actions with retries, Structured Outputs, and auditable execution controls.",
-      "Validate backend and RAG releases using pytest, Postman, RAGAS, and Golden Datasets, maintaining 66% automated coverage across API behavior, retrieval quality, access controls, and regression checks.",
-      "Deploy containerized services using Docker, Kubernetes, AWS, CI/CD, and OpenTelemetry across 3 environments, partnering with platform engineers to troubleshoot releases, trace failures, and verify production health.",
-      "Create AI-assisted release intelligence using Jenkins, GitHub Actions, Structured Logging, and operational telemetry, reducing build-failure triage time 14% by correlating tests, deployment events, runbooks, and incidents."
+      "Own backend transaction features with Python, FastAPI, PostgreSQL, Redis, and Kafka, delivering 10+ REST endpoints from requirements clarification through implementation, testing, integration, and production validation.",
+      "Develop backend integrations using Model Context Protocol and Tool Calling, exposing authenticated internal service actions through validated interfaces while reducing integration handling time by 12%.",
+      "Secure MCP-triggered service requests with OAuth 2.0, JWT, RBAC, and backend validation, enforcing permission-aware access, structured payloads, deterministic business rules, and consistent error handling across application integrations.",
+      "Validate backend releases through pytest, Postman, API Testing, and Regression Testing, maintaining 78% automated coverage while verifying service behavior, permissions, integrations, and production deployment readiness.",
+      "Deploy containerized backend services with Docker, Kubernetes, AWS, CI/CD, and OpenTelemetry, supporting 50K+ monthly API requests while partnering with platform engineers on reliability and observability.",
+      "Streamline build-failure investigation with Jenkins, GitHub Actions, Structured Logging, and PyCharm AI Assistant, reducing triage time by 16% through faster diagnostics, deployment analysis, and runbook-driven troubleshooting."
     ],
     metrics: [
-      { label: "Retrieval Speed", value: "+15% Faster" },
-      { label: "Governed Actions", value: "5 with HITL & RBAC" },
-      { label: "Automated Coverage", value: "66% API & RAG" },
-      { label: "Triage Time", value: "-14% Build-Failure" }
+      { label: "Monthly API Traffic", value: "50K+ Requests" },
+      { label: "Integration Handling", value: "-12% Time" },
+      { label: "Automated Coverage", value: "78% Tested" },
+      { label: "Build Triage", value: "-16% Time" }
     ],
     technologies: [
       "Python",
@@ -285,20 +275,20 @@ export const EXPERIENCES: ExperienceItem[] = [
       "PostgreSQL",
       "Redis",
       "Kafka",
-      "LangChain",
-      "LangGraph",
-      "Agentic RAG",
-      "Supabase",
-      "pgvector",
+      "Model Context Protocol (MCP)",
+      "Tool Calling",
+      "OAuth 2.0",
+      "JWT",
+      "RBAC",
       "Docker",
       "Kubernetes",
       "AWS",
       "OpenTelemetry",
       "pytest",
       "Postman",
-      "RAGAS",
+      "Jenkins",
       "GitHub Actions",
-      "Jenkins"
+      "PyCharm AI Assistant"
     ]
   },
   {
@@ -313,14 +303,14 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Developed assigned customer and service-request features using Python, FastAPI, Pydantic, REST APIs, and Swagger, contributing 8+ endpoints while partnering with Business Analysts and QA to improve maintainability.",
       "Optimized PostgreSQL access for customer-history workflows using SQLAlchemy, SQL, Alembic, indexing, and pagination, reducing API response latency by 18% while improving transaction reliability across assigned modules.",
       "Implemented secure notification and synchronization services with JWT, OAuth 2.0, RBAC, Redis, Celery, and RabbitMQ, reducing repeated database requests by 14% across routine application workflows.",
-      "Expanded release confidence using pytest, unittest, Postman, integration testing, regression testing, Git, pull requests, and code reviews, reaching 78% automated coverage before scheduled application releases.",
+      "Expanded release confidence using pytest, unit testing, Postman, integration testing, regression testing, Git, pull requests, and code reviews, reaching 74% automated coverage before scheduled application releases.",
       "Supported containerized application releases through Docker, Jenkins, Kubernetes, AWS, and CloudWatch across 3 environments, troubleshooting configuration issues and validating deployment health alongside DevOps engineers.",
       "Resolved production support issues using logging, monitoring, root-cause analysis, Jira, Agile/Scrum, and CI/CD troubleshooting while enhancing internal screens with React, TypeScript, HTML, and CSS."
     ],
     metrics: [
       { label: "API Response Latency", value: "-18% Reduced" },
       { label: "Database Requests", value: "-14% Repeated Hits" },
-      { label: "Automated Coverage", value: "78% Reached" },
+      { label: "Automated Coverage", value: "74% Reached" },
       { label: "Endpoints Delivered", value: "8+ Production Endpoints" }
     ],
     technologies: [
@@ -368,81 +358,87 @@ export const EDUCATION: EducationItem[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    category: "Languages & Frontend",
-    description: "Core programming languages and frontend technologies used across distributed backends and applications",
+    category: "Languages",
+    description: "Core programming languages utilized across backend services, distributed systems, and scripting",
     skills: [
-      { name: "Python", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "Python", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
       { name: "Java", usedIn: [] },
       { name: "Go", usedIn: ["distributed-community-platform"] },
+      { name: "SQL", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
       { name: "JavaScript", usedIn: ["dxc-technology"] },
-      { name: "TypeScript", usedIn: ["dxc-technology"] },
-      { name: "C++", usedIn: [] },
-      { name: "SQL", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "TypeScript", usedIn: ["dxc-technology"] }
+    ]
+  },
+  {
+    category: "Frontend",
+    description: "Web and cross-platform mobile frameworks for interactive dashboards and user screens",
+    skills: [
       { name: "React.js", usedIn: ["dxc-technology"] },
+      { name: "Flutter", usedIn: ["feedfl"] },
       { name: "HTML", usedIn: ["dxc-technology"] },
       { name: "CSS", usedIn: ["dxc-technology"] }
     ]
   },
   {
-    category: "Backend & APIs",
-    description: "Frameworks, protocols, and data modeling tools for scalable service architectures",
+    category: "Backend",
+    description: "Frameworks, protocols, and data modeling tools for robust, high-performance web services",
     skills: [
-      { name: "FastAPI", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "FastAPI", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
+      { name: "Django", usedIn: [] },
       { name: "Spring Boot", usedIn: [] },
-      { name: "REST APIs", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "distributed-community-platform"] },
-      { name: "Pydantic", usedIn: ["dxc-technology", "ledgerflow"] },
-      { name: "SQLAlchemy", usedIn: ["dxc-technology", "ledgerflow"] },
-      { name: "OpenAPI/Swagger", usedIn: ["dxc-technology", "ledgerflow"] }
+      { name: "REST APIs", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
+      { name: "Pydantic", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "SQLAlchemy", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "OpenAPI/Swagger", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] }
     ]
   },
   {
     category: "AI & Retrieval",
-    description: "RAG architectures, agent workflows, vector embeddings, and ML evaluation",
+    description: "Model Context Protocol, agentic tool calling, vector search, and grounded RAG pipelines",
     skills: [
-      { name: "RAG", usedIn: ["thoughtworks"] },
-      { name: "Agentic RAG", usedIn: ["thoughtworks"] },
-      { name: "LangGraph", usedIn: ["thoughtworks"] },
+      { name: "RAG", usedIn: ["thoughtworks", "feedfl"] },
       { name: "LangChain", usedIn: ["thoughtworks"] },
+      { name: "LangGraph", usedIn: ["thoughtworks"] },
+      { name: "MCP (Model Context Protocol)", usedIn: ["thoughtworks"] },
       { name: "Tool Calling", usedIn: ["thoughtworks"] },
-      { name: "HITL (Human-in-the-Loop)", usedIn: ["thoughtworks"] },
+      { name: "Vector Search", usedIn: ["thoughtworks", "feedfl"] },
       { name: "Hybrid Retrieval", usedIn: ["thoughtworks"] },
-      { name: "RAGAS", usedIn: ["thoughtworks"] },
-      { name: "NLP", usedIn: [] },
-      { name: "scikit-learn", usedIn: [] },
-      { name: "Pandas", usedIn: [] }
+      { name: "Semantic Search", usedIn: ["thoughtworks", "feedfl"] },
+      { name: "HITL (Human-in-the-Loop)", usedIn: ["thoughtworks"] }
     ]
   },
   {
-    category: "Databases & Search",
-    description: "Relational, document, spatial, and vector database engines",
+    category: "Databases",
+    description: "Relational, document, vector, and geospatial database engines",
     skills: [
-      { name: "PostgreSQL", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
+      { name: "PostgreSQL", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
       { name: "MongoDB", usedIn: [] },
       { name: "MySQL", usedIn: [] },
-      { name: "Supabase", usedIn: ["thoughtworks"] },
-      { name: "pgvector", usedIn: ["thoughtworks"] },
-      { name: "PostGIS", usedIn: [] },
+      { name: "pgvector", usedIn: ["thoughtworks", "feedfl"] },
+      { name: "PostGIS", usedIn: ["feedfl"] },
       { name: "Query Optimization", usedIn: ["dxc-technology"] }
     ]
   },
   {
-    category: "Distributed Systems & Messaging",
-    description: "Event-driven messaging, caching, queueing, and distributed concurrency controls",
+    category: "Distributed Systems",
+    description: "Event streaming, in-memory caching, message queues, and distributed concurrency controls",
     skills: [
       { name: "Kafka", usedIn: ["thoughtworks"] },
       { name: "Redis", usedIn: ["thoughtworks", "dxc-technology"] },
       { name: "RabbitMQ", usedIn: ["dxc-technology"] },
       { name: "Celery", usedIn: ["dxc-technology"] },
       { name: "Distributed Systems", usedIn: ["thoughtworks", "distributed-community-platform"] },
-      { name: "Event-Driven Architecture", usedIn: ["thoughtworks"] },
-      { name: "Idempotency", usedIn: ["ledgerflow"] }
+      { name: "Idempotency", usedIn: ["thoughtworks", "ledgerflow"] }
     ]
   },
   {
-    category: "Cloud, DevOps & Observability",
-    description: "Container orchestration, cloud services, CI/CD pipelines, and telemetry",
+    category: "Cloud & DevOps",
+    description: "Cloud providers, containerization, deployment pipelines, and operational observability",
     skills: [
-      { name: "AWS", usedIn: ["thoughtworks", "dxc-technology"] },
+      { name: "AWS", usedIn: ["thoughtworks", "dxc-technology", "feedfl"] },
+      { name: "EC2", usedIn: ["feedfl"] },
+      { name: "RDS", usedIn: ["feedfl"] },
+      { name: "Azure", usedIn: [] },
       { name: "Docker", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
       { name: "Kubernetes", usedIn: ["thoughtworks", "dxc-technology"] },
       { name: "CI/CD", usedIn: ["thoughtworks", "dxc-technology"] },
@@ -454,26 +450,27 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     category: "Testing & Security",
-    description: "Automated test suites, security protocols, and identity authorization",
+    description: "Automated test suites, regression verification, and identity access management",
     skills: [
       { name: "pytest", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow"] },
       { name: "Postman", usedIn: ["thoughtworks", "dxc-technology"] },
+      { name: "RAGAS", usedIn: ["thoughtworks"] },
       { name: "API Testing", usedIn: ["thoughtworks", "dxc-technology"] },
       { name: "Integration Testing", usedIn: ["thoughtworks", "dxc-technology"] },
       { name: "Regression Testing", usedIn: ["thoughtworks", "dxc-technology"] },
-      { name: "OAuth 2.0", usedIn: ["dxc-technology"] },
-      { name: "JWT", usedIn: ["dxc-technology"] },
+      { name: "OAuth 2.0", usedIn: ["thoughtworks", "dxc-technology"] },
+      { name: "JWT", usedIn: ["thoughtworks", "dxc-technology"] },
       { name: "RBAC", usedIn: ["thoughtworks", "dxc-technology"] }
     ]
   },
   {
     category: "Tools & Engineering Practices",
-    description: "Version control, Agile delivery workflows, and quality engineering",
+    description: "Developer tooling, root-cause diagnostics, and Agile collaboration workflows",
     skills: [
-      { name: "Git", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "distributed-community-platform"] },
+      { name: "PyCharm", usedIn: ["thoughtworks"] },
+      { name: "Git", usedIn: ["thoughtworks", "dxc-technology", "ledgerflow", "feedfl"] },
       { name: "Jira", usedIn: ["dxc-technology"] },
-      { name: "Agile", usedIn: ["dxc-technology"] },
-      { name: "Scrum", usedIn: ["dxc-technology"] },
+      { name: "Agile / Scrum", usedIn: ["dxc-technology"] },
       { name: "Pull Requests", usedIn: ["dxc-technology"] },
       { name: "Code Reviews", usedIn: ["dxc-technology"] },
       { name: "Root-Cause Analysis", usedIn: ["dxc-technology"] }

@@ -34,7 +34,7 @@ export default function Experience() {
             Work Experience
           </h2>
           <p className="mt-2 text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            3+ years engineering scalable backend services, Kafka-driven transaction pipelines, database optimizations, and governed Agentic RAG workflows across Thoughtworks and DXC Technology.
+            3+ years engineering scalable backend services, Model Context Protocol (MCP) integrations, high-throughput APIs, database optimizations, and cloud-native workflows across Thoughtworks and DXC Technology.
           </p>
         </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { 
   Code2, 
+  Layers,
   Server, 
   Database, 
   Brain, 
@@ -20,28 +21,32 @@ export default function Skills() {
 
   // Mapping project/experience IDs to human-readable labels
   const sourceLabelMap: Record<string, string> = {
-    thoughtworks: "Thoughtworks (Kafka services, LangGraph Agentic RAG & Supabase)",
-    "dxc-technology": "DXC Technology (FastAPI, PostgreSQL optimization, Celery & RabbitMQ)",
-    ledgerflow: "LedgerFlow (FastAPI & PostgreSQL double-entry ledger)",
-    "distributed-community-platform": "Distributed Platform (Go & ProtoActor actor-based system)",
+    thoughtworks: "Thoughtworks (FastAPI, MCP, Tool Calling, OAuth 2.0/JWT/RBAC, 50K+ req/mo)",
+    "dxc-technology": "DXC Technology (FastAPI, PostgreSQL optimization, Celery, RabbitMQ, 74% coverage)",
+    ledgerflow: "LedgerFlow (FastAPI, PostgreSQL row-level locks, 340 req/s @ 56ms p99)",
+    feedfl: "FeedFL (FastAPI, pgvector RAG chatbot, Supabase, PostGIS spatial queries, Flutter)",
+    "distributed-community-platform": "Distributed Platform (Go & ProtoActor actor concurrency)",
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "Languages & Frontend":
+      case "Languages":
         return <Code2 className="w-5 h-5 text-sky-500" />;
-      case "Backend & APIs":
+      case "Frontend":
+        return <Layers className="w-5 h-5 text-indigo-500" />;
+      case "Backend":
         return <Server className="w-5 h-5 text-emerald-500" />;
       case "AI & Retrieval":
         return <Brain className="w-5 h-5 text-purple-500" />;
-      case "Databases & Search":
-        return <Database className="w-5 h-5 text-indigo-500" />;
-      case "Distributed Systems & Messaging":
-        return <Activity className="w-5 h-5 text-amber-500" />;
-      case "Cloud, DevOps & Observability":
+      case "Databases":
+        return <Database className="w-5 h-5 text-amber-500" />;
+      case "Distributed Systems":
+        return <Activity className="w-5 h-5 text-rose-500" />;
+      case "Cloud & DevOps":
         return <Cloud className="w-5 h-5 text-cyan-500" />;
       case "Testing & Security":
-        return <ShieldCheck className="w-5 h-5 text-rose-500" />;
+        return <ShieldCheck className="w-5 h-5 text-emerald-500" />;
+      case "Tools & Engineering Practices":
       default:
         return <Wrench className="w-5 h-5 text-teal-500" />;
     }

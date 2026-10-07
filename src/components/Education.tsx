@@ -129,7 +129,7 @@ export default function Education() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold text-sky-600 dark:text-sky-400 bg-sky-500/10 hover:bg-sky-500 hover:text-white transition-all"
                     >
-                      <span>Verify Credential</span>
+                      <span>View Certificate</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>

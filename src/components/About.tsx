@@ -36,25 +36,25 @@ export default function About() {
             <p>
               I am a Software Engineer with <strong className="text-slate-900 dark:text-white font-semibold">3+ years of experience</strong> delivering 
               distributed backend services, cloud-native architectures, and AI-enabled systems. Currently completing my Master&apos;s in Computer Science at the{" "}
-              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.9 / 4.00 GPA)</strong>.
+              <strong className="text-slate-900 dark:text-white font-semibold">University of Florida (3.88 / 4.00 GPA)</strong>.
             </p>
 
             <p>
-              My professional journey progressed from <span className="text-sky-600 dark:text-sky-400 font-semibold">DXC Technology</span>—where I built customer-facing REST APIs, 
-              optimized PostgreSQL queries with SQLAlchemy and indexing cutting latency by 18%, and implemented Celery/RabbitMQ notification pipelines with 78% automated test coverage—to{" "}
-              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Thoughtworks</span>, building Kafka-driven transaction services, governed RAG knowledge search with Supabase and pgvector (+15% retrieval speedup), 
-              and human-in-the-loop <span className="text-purple-600 dark:text-purple-400 font-semibold">Agentic RAG workflows</span> using LangGraph.
+              My professional journey progressed from <span className="text-sky-600 dark:text-sky-400 font-semibold">DXC Technology</span>—where I built customer-facing REST services, 
+              optimized PostgreSQL queries with SQLAlchemy and indexing cutting latency by 18% and DB queries by 14%, and implemented Celery/RabbitMQ notification pipelines with 74% automated test coverage—to{" "}
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Thoughtworks</span>, owning scalable backend services, Model Context Protocol (MCP) integrations, 
+              and Tool Calling reducing integration handling time by 12%, while hardening OAuth 2.0 / JWT / RBAC security workflows and scaling production services to 50K+ monthly API requests across Docker, Kubernetes, and AWS.
             </p>
 
             <p>
               Whether it&apos;s designing double-entry ledgers that benchmark at 340 req/s with PostgreSQL row-level locks, 
-              engineering a 3-layer distributed community platform in Go using ProtoActor to eliminate shared-memory lock contention, 
+              engineering FeedFL pairing pgvector semantic RAG with PostGIS geospatial proximity routing for 200+ users, 
               or deploying containerized services with Docker, Kubernetes, AWS, and OpenTelemetry across multi-environment pipelines, 
               I focus on correctness, latency, and predictable system behavior.
             </p>
 
             <p>
-              I bring feature ownership, automated testing rigor (pytest, Postman, RAGAS), and cross-functional collaboration across QA, platform, and engineering teams to deliver reliable backend systems and scalable AI capabilities.
+              I bring feature ownership, automated testing rigor (pytest, Postman, RAGAS), and cross-functional collaboration across QA, platform, and engineering teams to deliver reliable backend services, secure integrations, and production-ready cloud systems.
             </p>
 
             {/* What I enjoy solving */}
@@ -66,11 +66,11 @@ export default function About() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Kafka &amp; event-driven transaction architectures</span>
+                  <span>Model Context Protocol (MCP) &amp; Tool Calling</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>Agentic RAG with LangGraph, Tool Calling &amp; HITL</span>
+                  <span>Kafka &amp; Redis event-driven backend systems</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
@@ -78,7 +78,7 @@ export default function About() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span>ProtoActor distributed message passing &amp; simulation</span>
+                  <span>pgvector semantic search &amp; PostGIS spatial retrieval</span>
                 </li>
               </ul>
             </div>
@@ -120,35 +120,35 @@ export default function About() {
               </p>
             </div>
 
-            {/* Stat Card 3: Distributed Platform in Go */}
+            {/* Stat Card 3: MCP & Tool Calling */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-amber-500/40 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">Distributed Architecture</span>
+                <span className="text-xs font-mono uppercase text-slate-400">Protocols &amp; Integrations</span>
                 <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-500">
                   <Layers className="w-4 h-4" />
                 </span>
               </div>
               <div className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 mt-2">
-                Go &middot; ProtoActor
+                Model Context Protocol
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                3-Layer distributed platform with actor-based concurrency &amp; simulation
+                MCP &amp; Tool Calling integrations cutting handling time by 12%
               </p>
             </div>
 
-            {/* Stat Card 4: Agentic RAG & AI */}
+            {/* Stat Card 4: Production Scale */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#0d121f] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-purple-500/40 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-slate-400">Enterprise AI</span>
+                <span className="text-xs font-mono uppercase text-slate-400">Production Scale &amp; Reliability</span>
                 <span className="p-1.5 rounded-lg bg-purple-500/10 text-purple-500">
                   <Database className="w-4 h-4" />
                 </span>
               </div>
               <div className="text-3xl font-extrabold text-purple-600 dark:text-purple-400 mt-2">
-                Agentic RAG
+                50K+ <span className="text-sm font-normal text-slate-400">Monthly Requests</span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                LangGraph, Tool Calling, HITL &amp; Supabase pgvector (+15% retrieval speed)
+                Docker, Kubernetes, AWS, OpenTelemetry &amp; 78% automated test coverage
               </p>
             </div>
 
